@@ -32,7 +32,7 @@ public class O1 {
 
         skatteBelop = bruttoInntekt * trinnSkatt;
         
-        System.out.println("Trinnskatt: " + trinnSkatt);
+        System.out.println("Trinnskatt: " + trinnSkatt * 100 + "%");
         System.out.println("Skatt å betale: " + skatteBelop);
     }
 }
