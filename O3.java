@@ -9,10 +9,16 @@ public class O3 {
         int heltall = scanner.nextInt();
         
         if (heltall <= 0) {
-            System.out.println("Heltall må være over 0, skriv inn nytt tall: ");
-            heltall = scanner.nextInt();
+            System.out.println("Heltall må være over 0");
+            main(args);
         }
-
         
+        int fact = 1;
+        
+        for (int i = 1; i < heltall; i++) {
+            fact = fact * (i + 1);
+        }
+        
+        System.out.println(fact);
     }
 }
