@@ -11,6 +11,7 @@ public class O3 {
         if (heltall <= 0) {
             System.out.println("Heltall må være over 0");
             main(args);
+            return;
         }
         
         int fact = 1;
