@@ -1,11 +1,8 @@
-// litt vanskelig å tolke nøyaktig hvordan b) og c) skulle løses
-// jeg har gjort en hybrid løsning mellom Scanner input hvis man har en og en score, eller input arguments hvis man har en liste med student scores
-// angående c) så har jeg valgt rekursjon hvis man skriver en ugyldig score for å lese av nextInt() igjen, med input arguments i en liste går ikke dette
 import java.util.Scanner;
 
 public class MyClass {
     
-    public static char konverterScore(int score) {
+    private static char konverterScore(int score) {
             if (score >= 90) {
                 return 'A';
             } else if (score >= 80) {
@@ -20,40 +17,26 @@ public class MyClass {
                 return 'F';
             }
         }
+
+    private static int sjekkScore(Scanner scanner) {
+        int score = scanner.nextInt();
+        if (score < 0 || score > 100) {
+            System.out.println("Ugyldig score, skriv inn på ny: ");
+            sjekkScore(scanner);
+        }
+        return score;
+    }
         
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int score = 0; 
-        char karakter = ' ';
-        
-        if (args.length == 0) {
-            System.out.print("Skriv inn score: ");
-            score = scanner.nextInt();
-            
-            if (score < 0 || score > 100) {
-                System.out.println("Ugyldig score, prøv på ny");
-                main(args);
-            } else {
-                karakter = konverterScore(score);
-                
-                System.out.println("Din karakter: " + karakter);
-            }
-        } else {
-            for (int i = 0; i < args.length; i++) {
-                score = Integer.parseInt(args[i]);
-                
-                if (score < 0 || score > 100) {
-                    System.out.println("Ugyldig score");
-                    continue;
-                }
-                
-                karakter = konverterScore(score);
-                
-                System.out.println("Din karakter: " + karakter);
-            }
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Skriv inn score for student nr " + (i + 1) + ": ");
+            int score = sjekkScore(scanner);
+            char karakter = konverterScore(score);
+            System.out.println("Student nr " + (i + 1) + " sin karakter: " + karakter);
         }
-
+        
         scanner.close();
     }
 }
