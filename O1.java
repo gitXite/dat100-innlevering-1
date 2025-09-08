@@ -34,5 +34,7 @@ public class O1 {
         
         System.out.println("Trinnskatt: " + trinnSkatt * 100 + "%");
         System.out.println("Skatt å betale: " + skatteBelop);
+
+        scanner.close();
     }
 }
