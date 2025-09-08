@@ -53,5 +53,7 @@ public class MyClass {
                 System.out.println("Din karakter: " + karakter);
             }
         }
+
+        scanner.close();
     }
 }
