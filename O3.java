@@ -21,5 +21,7 @@ public class O3 {
         }
         
         System.out.println(fact);
+
+        scanner.close();
     }
 }
