@@ -37,7 +37,7 @@ public class O1 {
         scanner.close();
     }
 
-    // hjelpefunksjon for å gjøre implementere switch
+    // hjelpefunksjon for å implementere switch
     private static int sjekkTrinn(int inntekt) {
         if (inntekt > 1410750) {
             return 5;
